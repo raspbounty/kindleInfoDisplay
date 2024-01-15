@@ -12,6 +12,7 @@
     .forecastText {
       font: 20px sans-serif;
       fill: #FFF;
+      text-anchor: middle;
     }
 
     .curText {
@@ -23,39 +24,84 @@
       font: 20px sans-serif;
       fill: #FFF;
     }
+
+    .calendarBorder{
+      width: 200px;
+      height: 55px;
+      stroke: #FFF;
+      ry: 5;
+    }
+
+    .calendarText{
+      font: 15px sans-serif;
+      fill: #FFF;
+      text-anchor: middle;
+    }
   </style>
   <rect style="fill:#000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" id="rahmen" width="600" height="800" x="0" y="0" />
+
+  <rect id="rect1" class="calendarBorder" x="380" y="25"/>
+    <text x="480" y="70" class="calendarText">
+    <tspan template-id="calendarEventDesc0"> Emma surolan Ende? </tspan>
+  </text>
+  <text x="480" y="45" class="calendarText">
+    <tspan template-id="calendarEventDate0"> 21.01.</tspan>
+  </text>
+
+
+
+  <rect id="rect2" class="calendarBorder" x="380" y="95"/>
+    <text x="480" y="140" class="calendarText">
+    <tspan template-id="calendarEventDesc1"> Schmidts</tspan>
+  </text>
+  <text x="480" y="115" class="calendarText">
+    <tspan template-id="calendarEventDate1"> 21.01. von 11:00 bis 16:00 </tspan>
+  </text>
+
+  
+
+  <rect id="rect3" class="calendarBorder" x="380" y="165"/>
+    <text x="480" y="210" class="calendarText">
+    <tspan template-id="calendarEventDesc2"> Lilo Schule </tspan>
+  </text>
+  <text x="480" y="185" class="calendarText">
+    <tspan template-id="calendarEventDate2"> 21.01. bis 27.01. </tspan>
+  </text>
+  <text x="20" y="250" class="errorText">
+    <tspan template-id="calendarError"></tspan>
+  </text>
+
   <text x="20" y="40" class="curText">
     <tspan template-id="updateTime"> 10:00 </tspan>
   </text>
-  <text x="35" y="640" class="forecastText">
+  <text x="60" y="640" class="forecastText">
     <tspan template-id="foreTime0"> 10:10 </tspan>
   </text>
-  <text x="155" y="640" class="forecastText">
+  <text x="180" y="640" class="forecastText">
     <tspan template-id="foreTime1"> 10:10 </tspan>
   </text>
-  <text x="275" y="640" class="forecastText">
+  <text x="300" y="640" class="forecastText">
     <tspan template-id="foreTime2"> 10:10 </tspan>
   </text>
-  <text x="395" y="640" class="forecastText">
+  <text x="420" y="640" class="forecastText">
     <tspan template-id="foreTime3"> 10:10 </tspan>
   </text>
-  <text x="515" y="640" class="forecastText">
+  <text x="540" y="640" class="forecastText">
     <tspan template-id="foreTime4"> 10:10 </tspan>
   </text>
-  <text x="35" y="750" class="forecastText">
+  <text x="60" y="750" class="forecastText">
     <tspan template-id="foreTemp0"> 7C </tspan>
   </text>
-  <text x="155" y="750" class="forecastText">
+  <text x="180" y="750" class="forecastText">
     <tspan template-id="foreTemp1"> 7C </tspan>
   </text>
-  <text x="275" y="750" class="forecastText">
+  <text x="300" y="750" class="forecastText">
     <tspan template-id="foreTemp2"> 7C </tspan>
   </text>
-  <text x="395" y="750" class="forecastText">
+  <text x="420" y="750" class="forecastText">
     <tspan template-id="foreTemp3"> 7C </tspan>
   </text>
-  <text x="515" y="750" class="forecastText">
+  <text x="540" y="750" class="forecastText">
     <tspan template-id="foreTemp4"> 7C </tspan>
   </text>
   <rect id="rect113-1" class="weatherIcon" x="20" y="650" template-id="foreIcon0" />

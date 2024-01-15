@@ -2,6 +2,8 @@ import requests
 import json
 import platform
 import os
+import arrow
+from ics import Calendar
 
 if platform.system() == 'Windows':
     #needed for cairosvg to work under windows
@@ -19,36 +21,52 @@ import datetime
 import svglue
 
 def degrees_to_cardinal(d):
-    dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
+    dirs = ['N', 'NNO', 'NO', 'ONO', 'O', 'OSO', 'SO', 'SSO', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
     ix = round(d / (360. / len(dirs)))
     return dirs[ix % len(dirs)]
+
+def getCalDateString(event):
+    if(event.all_day):
+        if(event.duration.days > 1):
+            out = event.begin.format("DD.MM") + " bis "  + event.end.format("DD.MM")
+        else:
+            out = event.begin.format("DD.MM")
+    else:
+        out=  event.begin.format("DD.MM [von] HH:mm") + " bis "  + event.end.format("HH:mm")
+    return out
 
 urlNow = "https://api.openweathermap.org/data/2.5/weather"
 urlFore = "https://api.openweathermap.org/data/2.5/forecast"
 outputsvg = "output.svg"
 outputpng = "output.png"
+weatherFile = "weatherData.json"
+calendarFile = "calendar.ics"
 
+with open("parameter.json", "r") as f:
+    params = json.load(f)
+owmParams = params["owm"]
+calUrl = params["gcalendar"]
+
+current_time = datetime.datetime.now()
+
+'''weather Data'''
 try:
-    with open("weatherData.json", "r") as f:
+    with open(weatherFile, "r") as f:
         localData = json.load(f)
-    lastRequest = datetime.datetime.fromtimestamp(localData["now"]["dt"])
+    lastWeatherRequest = datetime.datetime.fromtimestamp(localData["now"]["dt"])
 except:
     #set to random timestamp more than 30 min ago
-    lastRequest = datetime.datetime.fromtimestamp(1326244364)
+    lastWeatherRequest = datetime.datetime.fromtimestamp(1326244364)
 
 #check if data is more than 30 min old
-current_time = datetime.datetime.now()
-timeDiff = current_time - lastRequest
+timeDiff = current_time - lastWeatherRequest
 weatherError = None
 if timeDiff.seconds > 1800:
-    #pull new Data
-    with open("parameter.json", "r") as f:
-        params = json.load(f)
-    
+    #pull new Data   
     try:
-        response = requests.get(urlNow, params = params)
+        response = requests.get(urlNow, params = owmParams)
         nowWeather = response.json()
-        response = requests.get(urlFore, params = params)
+        response = requests.get(urlFore, params = owmParams)
         foreWeather = response.json()
 
         weather = {}
@@ -56,7 +74,7 @@ if timeDiff.seconds > 1800:
         weather["forecast"] = foreWeather
 
         #save new data
-        with open("weatherData.json", "w") as f:
+        with open(weatherFile, "w") as f:
             json.dump(weather, f)
     except Exception as e:
         weatherError = e
@@ -69,9 +87,9 @@ if weatherError == None:
     with open("iconsMapping.json", "r") as f:
         iconMap = json.load(f)
 
-    currentTemp = str(round(weather["now"]["main"]["temp"], 0)) + "C and feels like " + str(round(weather["now"]["main"]["feels_like"], 0))
+    currentTemp = str(round(weather["now"]["main"]["temp"], 0)) + "C und fuehlt sich an wie " + str(round(weather["now"]["main"]["feels_like"], 0))
     currentIcon = "icons/"+ str(iconMap[weather["now"]["weather"][0]["icon"]])
-    currentWind = str(weather["now"]["wind"]["speed"]) + "m/s from " + degrees_to_cardinal(weather["now"]["wind"]["deg"])
+    currentWind = str(weather["now"]["wind"]["speed"]) + "m/s von " + degrees_to_cardinal(weather["now"]["wind"]["deg"])
 
     tpl.set_text("curTemp", currentTemp)
     tpl.set_text("curWind", currentWind)
@@ -92,6 +110,38 @@ if weatherError == None:
         tpl.set_svg("foreIcon" + str(i), file=iconName)
 else:
     tpl.set_text("weatherError", weatherError)
+
+
+'''Calendar Data'''
+calendarError = None
+try:
+    lastCalendarRequest = datetime.datetime.fromtimestamp(os.path.getmtime(calendarFile))
+except:
+    #set to random timestamp more than 1 day ago
+    lastCalendarRequest = datetime.datetime.fromtimestamp(1326244364)
+timeDiffCal = current_time - lastCalendarRequest
+
+if(timeDiffCal.days > 1):
+    try:
+        calendar = requests.get(calUrl).text
+        with open(calendarFile, 'w') as calFile:
+            calFile.write(calendar)
+    except Exception as e:
+        calendarError = e
+
+else:
+    with open(calendarFile, 'r') as calFile:
+        calendar = calFile.read()
+
+if calendarError == None:
+    c = Calendar(calendar)
+    eventsList = list(c.timeline.start_after(arrow.now()))
+    for i in range(3):
+        tpl.set_text("calendarEventDesc" + str(i), eventsList[i].name)
+        tpl.set_text("calendarEventDate" + str(i), getCalDateString(eventsList[i]))
+
+else:
+    tpl.set_text("calendarError", weatherError)
 
 tpl.set_text("updateTime", "last updated: " + current_time.strftime("%H:%M"))
 
