@@ -1,0 +1,20 @@
+{
+    "01d":"wi-day-sunny.svg",
+    "02d":"wi-day-cloudy.svg",
+    "03d":"wi-day-cloudy.svg",
+    "04d":"wi-day-cloudy.svg",
+    "09d":"wi-day-showers.svg",
+    "10d":"wi-day-rain.svg",
+    "11d":"wi-day-thunderstorm.svg",
+    "13d":"wi-day-snow.svg",
+    "50d":"wi-day-fog.svg",
+    "01n":"wi-night-clear.svg",
+    "02n":"wi-night-cloudy.svg",
+    "03n":"wi-night-cloudy.svg",
+    "04n":"wi-night-cloudy.svg",
+    "09n":"wi-night-showers.svg",
+    "10n":"wi-night-rain.svg",
+    "11n":"wi-night-thunderstorm.svg",
+    "13n":"wi-night-snow.svg",
+    "50n":"wi-night-fog.svg"
+}

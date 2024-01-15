@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="600" height="800" version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="template.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs4" />
+  <style>
+    .weatherIcon {
+      width: 80px;
+      height: 80px;
+      fill: #FFF
+    }
+
+    .forecastText {
+      font: 20px sans-serif;
+      fill: #FFF;
+    }
+
+    .curText {
+      font: 30px sans-serif;
+      fill: #FFF;
+    }
+
+    .errorText{
+      font: 20px sans-serif;
+      fill: #FFF;
+    }
+  </style>
+  <rect style="fill:#000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" id="rahmen" width="600" height="800" x="0" y="0" />
+  <text x="20" y="40" class="curText">
+    <tspan template-id="updateTime"> 10:00 </tspan>
+  </text>
+  <text x="35" y="640" class="forecastText">
+    <tspan template-id="foreTime0"> 10:10 </tspan>
+  </text>
+  <text x="155" y="640" class="forecastText">
+    <tspan template-id="foreTime1"> 10:10 </tspan>
+  </text>
+  <text x="275" y="640" class="forecastText">
+    <tspan template-id="foreTime2"> 10:10 </tspan>
+  </text>
+  <text x="395" y="640" class="forecastText">
+    <tspan template-id="foreTime3"> 10:10 </tspan>
+  </text>
+  <text x="515" y="640" class="forecastText">
+    <tspan template-id="foreTime4"> 10:10 </tspan>
+  </text>
+  <text x="35" y="750" class="forecastText">
+    <tspan template-id="foreTemp0"> 7C </tspan>
+  </text>
+  <text x="155" y="750" class="forecastText">
+    <tspan template-id="foreTemp1"> 7C </tspan>
+  </text>
+  <text x="275" y="750" class="forecastText">
+    <tspan template-id="foreTemp2"> 7C </tspan>
+  </text>
+  <text x="395" y="750" class="forecastText">
+    <tspan template-id="foreTemp3"> 7C </tspan>
+  </text>
+  <text x="515" y="750" class="forecastText">
+    <tspan template-id="foreTemp4"> 7C </tspan>
+  </text>
+  <rect id="rect113-1" class="weatherIcon" x="20" y="650" template-id="foreIcon0" />
+  <rect id="rect113-2" class="weatherIcon" x="140" y="650" template-id="foreIcon1" />
+  <rect id="rect113-3" class="weatherIcon" x="260" y="650" template-id="foreIcon2" />
+  <rect id="rect113-4" class="weatherIcon" x="380" y="650" template-id="foreIcon3" />
+  <rect id="rect113-5" class="weatherIcon" x="500" y="650" template-id="foreIcon4" />
+  <rect id="rect113-5" class="weatherIcon" x="20" y="450" template-id="curIcon" />
+  <text x="120" y="480" class="curText">
+    <tspan template-id="curTemp"> 7C </tspan>
+  </text>
+    <text x="120" y="520" class="curText">
+    <tspan template-id="curWind"> 7C </tspan>
+  </text>
+  <text x="20" y="600" class="errorText">
+    <tspan template-id="weatherError"></tspan>
+  </text>
+</svg>
