@@ -28,12 +28,15 @@ urlFore = "https://api.openweathermap.org/data/2.5/forecast"
 outputsvg = "output.svg"
 outputpng = "output.png"
 
-
-with open("weatherData.json", "r") as f:
-    localData = json.load(f)
+try:
+    with open("weatherData.json", "r") as f:
+        localData = json.load(f)
+    lastRequest = datetime.datetime.fromtimestamp(localData["now"]["dt"])
+except:
+    #set to random timestamp more than 30 min ago
+    lastRequest = datetime.datetime.fromtimestamp(1326244364)
 
 #check if data is more than 30 min old
-lastRequest = datetime.datetime.fromtimestamp(localData["now"]["dt"])
 current_time = datetime.datetime.now()
 timeDiff = current_time - lastRequest
 weatherError = None
