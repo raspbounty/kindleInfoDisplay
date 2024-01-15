@@ -87,7 +87,7 @@ if weatherError == None:
     with open("iconsMapping.json", "r") as f:
         iconMap = json.load(f)
 
-    currentTemp = str(int(round(weather["now"]["main"]["temp"], 0))) + "C und fuehlt sich an wie " + str(int(round(weather["now"]["main"]["feels_like"], 0))) + "C"
+    currentTemp = str(int(round(weather["now"]["main"]["temp"], 0))) + "C fuehlt sich an wie " + str(int(round(weather["now"]["main"]["feels_like"], 0))) + "C"
     currentIcon = "icons/"+ str(iconMap[weather["now"]["weather"][0]["icon"]])
     currentWind = str(weather["now"]["wind"]["speed"]) + "m/s von " + degrees_to_cardinal(weather["now"]["wind"]["deg"])
 
