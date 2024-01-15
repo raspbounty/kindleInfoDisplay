@@ -6,7 +6,7 @@ crontab -e
 ```
 add line at end of file and save
 ```
-*/20 * * * * /usr/bin/python /home/pi/kindle/getWeather.py
+*/20 * * * * /usr/bin/python /home/pi/kindleInfoDisplay/getWeather.py
 ```
 and run
 ```
@@ -14,5 +14,5 @@ sudo crontab -e
 ```
 add line at end of file and save
 ```
-*/10 * * * * /usr/bin/convert /home/pi/kindle/output.png -colorspace Gray /var/www/html/kindle.png
+*/5 * * * * /usr/bin/convert /home/pi/kindleInfoDisplay/output.png -colorspace Gray /var/www/html/kindle.png
 ```
