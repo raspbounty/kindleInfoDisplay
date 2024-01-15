@@ -87,7 +87,7 @@ if weatherError == None:
     with open("iconsMapping.json", "r") as f:
         iconMap = json.load(f)
 
-    currentTemp = str(round(weather["now"]["main"]["temp"], 0)) + "C und fuehlt sich an wie " + str(round(weather["now"]["main"]["feels_like"], 0))
+    currentTemp = str(int(round(weather["now"]["main"]["temp"], 0))) + "C und fuehlt sich an wie " + str(int(round(weather["now"]["main"]["feels_like"], 0))) + "C"
     currentIcon = "icons/"+ str(iconMap[weather["now"]["weather"][0]["icon"]])
     currentWind = str(weather["now"]["wind"]["speed"]) + "m/s von " + degrees_to_cardinal(weather["now"]["wind"]["deg"])
 
@@ -102,7 +102,7 @@ if weatherError == None:
         icon = forecasts[i]["weather"][0]["icon"]
         
         timestr = str(datetime.datetime.fromtimestamp(timestamp=time, tz=datetime.timezone.utc).strftime('%H:%M'))
-        temp = str(round(temp, 0)) + "C"
+        temp = str(int(round(temp, 0))) + "C"
         iconName = "icons/"+ str(iconMap[icon])
 
         tpl.set_text("foreTime" + str(i), timestr)

@@ -32,6 +32,15 @@
       ry: 5;
     }
 
+    .weatherBorder{
+      width: 560px;
+      height: 100px;
+      stroke: #FFF;
+      fill: none;
+      ry: 5;
+
+    }
+
     .calendarText{
       font: 15px sans-serif;
       fill: #FFF;
@@ -109,11 +118,12 @@
   <rect id="rect113-3" class="weatherIcon" x="260" y="650" template-id="foreIcon2" />
   <rect id="rect113-4" class="weatherIcon" x="380" y="650" template-id="foreIcon3" />
   <rect id="rect113-5" class="weatherIcon" x="500" y="650" template-id="foreIcon4" />
-  <rect id="rect113-5" class="weatherIcon" x="20" y="450" template-id="curIcon" />
-  <text x="120" y="480" class="curText">
-    <tspan template-id="curTemp"> 7C </tspan>
+  <rect id="rect113-6" class="weatherIcon" x="30" y="510" template-id="curIcon" />
+  <rect id="rect113-7" class="weatherBorder" x="20" y="500" />
+  <text x="130" y="540" class="curText">
+    <tspan template-id="curTemp"> 1.0C und fuehlt sich an wie -2.0 </tspan>
   </text>
-    <text x="120" y="520" class="curText">
+    <text x="130" y="580" class="curText">
     <tspan template-id="curWind"> 7C </tspan>
   </text>
   <text x="20" y="600" class="errorText">
