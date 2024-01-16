@@ -25,105 +25,131 @@
       fill: #FFF;
     }
 
-    .calendarBorder{
-      width: 200px;
-      height: 55px;
+    .smallInfo{
+      font: 15px sans-serif ;
+      fill: #FFF;
+    }
+
+    .calendarEventBorder{
+      width: 270px;
+      height: 70px;
       stroke: #FFF;
+      stroke-width: 2px;
       ry: 5;
     }
 
-    .weatherBorder{
+    .currentWeatherBorder{
       width: 560px;
       height: 100px;
       stroke: #FFF;
+      stroke-width: 2px;
       fill: none;
       ry: 5;
 
     }
 
+    .weatherBorder{
+      width: 580px;
+      height: 270px;
+      stroke: #FFF;
+      stroke-width: 2px;
+      fill: none;
+      ry: 5;
+    }
+
     .calendarText{
-      font: 15px sans-serif;
+      font: 20px sans-serif;
       fill: #FFF;
       text-anchor: middle;
+    }
+
+    .calendarBorder{
+      width: 270px;
+      height: 250px;
+      stroke: #FFF;
+      stroke-width: 2px;
+      fill: none;
+      ry: 5;
     }
   </style>
   <rect style="fill:#000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" id="rahmen" width="600" height="800" x="0" y="0" />
 
-  <rect id="rect1" class="calendarBorder" x="380" y="25"/>
-    <text x="480" y="70" class="calendarText">
+  <rect id="rect1" class="calendarEventBorder" x="310" y="20"/>
+    <text x="445" y="75" class="calendarText">
     <tspan template-id="calendarEventDesc0"> Emma surolan Ende? </tspan>
   </text>
-  <text x="480" y="45" class="calendarText">
+  <text x="445" y="50" class="calendarText">
     <tspan template-id="calendarEventDate0"> 21.01.</tspan>
   </text>
 
 
 
-  <rect id="rect2" class="calendarBorder" x="380" y="95"/>
-    <text x="480" y="140" class="calendarText">
+  <rect id="rect2" class="calendarEventBorder" x="310" y="100"/>
+    <text x="445" y="155" class="calendarText">
     <tspan template-id="calendarEventDesc1"> Schmidts</tspan>
   </text>
-  <text x="480" y="115" class="calendarText">
+  <text x="445" y="130" class="calendarText">
     <tspan template-id="calendarEventDate1"> 21.01. von 11:00 bis 16:00 </tspan>
   </text>
 
   
 
-  <rect id="rect3" class="calendarBorder" x="380" y="165"/>
-    <text x="480" y="210" class="calendarText">
+  <rect id="rect3" class="calendarEventBorder" x="310" y="180"/>
+    <text x="445" y="235" class="calendarText">
     <tspan template-id="calendarEventDesc2"> Lilo Schule </tspan>
   </text>
-  <text x="480" y="185" class="calendarText">
+  <text x="445" y="210" class="calendarText">
     <tspan template-id="calendarEventDate2"> 21.01. bis 27.01. </tspan>
   </text>
   <text x="20" y="250" class="errorText">
     <tspan template-id="calendarError"></tspan>
   </text>
 
-  <text x="20" y="40" class="curText">
+  <text x="20" y="40" class="smallInfo">
     <tspan template-id="updateTime"> 10:00 </tspan>
   </text>
-  <text x="60" y="640" class="forecastText">
+  <text x="60" y="670" class="forecastText">
     <tspan template-id="foreTime0"> 10:10 </tspan>
   </text>
-  <text x="180" y="640" class="forecastText">
+  <text x="180" y="670" class="forecastText">
     <tspan template-id="foreTime1"> 10:10 </tspan>
   </text>
-  <text x="300" y="640" class="forecastText">
+  <text x="300" y="670" class="forecastText">
     <tspan template-id="foreTime2"> 10:10 </tspan>
   </text>
-  <text x="420" y="640" class="forecastText">
+  <text x="420" y="670" class="forecastText">
     <tspan template-id="foreTime3"> 10:10 </tspan>
   </text>
-  <text x="540" y="640" class="forecastText">
+  <text x="540" y="670" class="forecastText">
     <tspan template-id="foreTime4"> 10:10 </tspan>
   </text>
-  <text x="60" y="750" class="forecastText">
+  <text x="60" y="780" class="forecastText">
     <tspan template-id="foreTemp0"> 7C </tspan>
   </text>
-  <text x="180" y="750" class="forecastText">
+  <text x="180" y="780" class="forecastText">
     <tspan template-id="foreTemp1"> 7C </tspan>
   </text>
-  <text x="300" y="750" class="forecastText">
+  <text x="300" y="780" class="forecastText">
     <tspan template-id="foreTemp2"> 7C </tspan>
   </text>
-  <text x="420" y="750" class="forecastText">
+  <text x="420" y="780" class="forecastText">
     <tspan template-id="foreTemp3"> 7C </tspan>
   </text>
-  <text x="540" y="750" class="forecastText">
+  <text x="540" y="780" class="forecastText">
     <tspan template-id="foreTemp4"> 7C </tspan>
   </text>
-  <rect id="rect113-1" class="weatherIcon" x="20" y="650" template-id="foreIcon0" />
-  <rect id="rect113-2" class="weatherIcon" x="140" y="650" template-id="foreIcon1" />
-  <rect id="rect113-3" class="weatherIcon" x="260" y="650" template-id="foreIcon2" />
-  <rect id="rect113-4" class="weatherIcon" x="380" y="650" template-id="foreIcon3" />
-  <rect id="rect113-5" class="weatherIcon" x="500" y="650" template-id="foreIcon4" />
-  <rect id="rect113-6" class="weatherIcon" x="30" y="510" template-id="curIcon" />
-  <rect id="rect113-7" class="weatherBorder" x="20" y="500" />
-  <text x="130" y="540" class="curText">
-    <tspan template-id="curTemp"> 1.0C und fuehlt sich an wie -2.0 </tspan>
+  <rect id="rect113-1" class="weatherIcon" x="20" y="680" template-id="foreIcon0" />
+  <rect id="rect113-2" class="weatherIcon" x="140" y="680" template-id="foreIcon1" />
+  <rect id="rect113-3" class="weatherIcon" x="260" y="680" template-id="foreIcon2" />
+  <rect id="rect113-4" class="weatherIcon" x="380" y="680" template-id="foreIcon3" />
+  <rect id="rect113-5" class="weatherIcon" x="500" y="680" template-id="foreIcon4" />
+  <rect id="rect113-6" class="weatherIcon" x="30" y="540" template-id="curIcon" />
+  <rect id="rect113-7" class="currentWeatherBorder" x="20" y="530" />
+  <rect id="rect113-8" class="weatherBorder" x="10" y="520" />
+  <text x="130" y="570" class="curText">
+    <tspan template-id="curTemp"> 1.0C fuehlt sich an wie -2.0 </tspan>
   </text>
-    <text x="130" y="580" class="curText">
+    <text x="130" y="610" class="curText">
     <tspan template-id="curWind"> 7C </tspan>
   </text>
   <text x="20" y="600" class="errorText">

@@ -28,11 +28,13 @@ def degrees_to_cardinal(d):
 def getCalDateString(event):
     if(event.all_day):
         if(event.duration.days > 1):
-            out = event.begin.format("DD.MM") + " bis "  + event.end.format("DD.MM")
+            out = event.begin.format("DD.MM.") + " bis "  + event.end.format("DD.MM.")
         else:
-            out = event.begin.format("DD.MM")
+            out = event.begin.format("DD.MM.")
     else:
-        out=  event.begin.format("DD.MM [von] HH:mm") + " bis "  + event.end.format("HH:mm")
+        beginTime = datetime.datetime.fromtimestamp(event.begin.timestamp())
+        endTime = datetime.datetime.fromtimestamp(event.end.timestamp())
+        out=  beginTime.strftime("%d.%m. von %H:%M") + " bis "  + endTime.strftime("%H:%M")
     return out
 
 urlNow = "https://api.openweathermap.org/data/2.5/weather"
