@@ -137,7 +137,7 @@ else:
 
 if calendarError == None:
     c = Calendar(calendar)
-    eventsList = list(c.timeline.start_after(arrow.now()))
+    eventsList = list(c.timeline.now()) + list(c.timeline.start_after(arrow.now()))
     for i in range(3):
         tpl.set_text("calendarEventDesc" + str(i), eventsList[i].name)
         tpl.set_text("calendarEventDate" + str(i), getCalDateString(eventsList[i]))
