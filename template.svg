@@ -2,157 +2,87 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg width="600" height="800" version="1.1" id="svg5" inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)" sodipodi:docname="template.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
   <defs id="defs4" />
-  <style>
-    .weatherIcon {
-      width: 80px;
-      height: 80px;
-      fill: #FFF
-    }
-
-    .forecastText {
-      font: 20px sans-serif;
-      fill: #FFF;
-      text-anchor: middle;
-    }
-
-    .curText {
-      font: 30px sans-serif;
-      fill: #FFF;
-    }
-
-    .errorText{
-      font: 20px sans-serif;
-      fill: #FFF;
-    }
-
-    .smallInfo{
-      font: 15px sans-serif ;
-      fill: #FFF;
-    }
-
-    .calendarEventBorder{
-      width: 270px;
-      height: 70px;
-      stroke: #FFF;
-      stroke-width: 2px;
-      ry: 5;
-    }
-
-    .currentWeatherBorder{
-      width: 560px;
-      height: 100px;
-      stroke: #FFF;
-      stroke-width: 2px;
-      fill: none;
-      ry: 5;
-
-    }
-
-    .weatherBorder{
-      width: 580px;
-      height: 270px;
-      stroke: #FFF;
-      stroke-width: 2px;
-      fill: none;
-      ry: 5;
-    }
-
-    .calendarText{
-      font: 20px sans-serif;
-      fill: #FFF;
-      text-anchor: middle;
-    }
-
-    .calendarBorder{
-      width: 270px;
-      height: 250px;
-      stroke: #FFF;
-      stroke-width: 2px;
-      fill: none;
-      ry: 5;
-    }
-  </style>
   <rect style="fill:#000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" id="rahmen" width="600" height="800" x="0" y="0" />
 
-  <rect id="rect1" class="calendarEventBorder" x="310" y="20"/>
-    <text x="445" y="75" class="calendarText">
+  <rect id="rect1" style="stroke-width:2;stroke:#FFF" width="270px" height="70px" ry="5" x="310" y="20"/>
+    <text x="445" y="75" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc0"> Emma surolan Ende? </tspan>
   </text>
-  <text x="445" y="50" class="calendarText">
+  <text x="445" y="50" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate0"> 21.01.</tspan>
   </text>
 
 
 
-  <rect id="rect2" class="calendarEventBorder" x="310" y="100"/>
-    <text x="445" y="155" class="calendarText">
+  <rect id="rect2" style="stroke-width:2px;stroke:#FFF" width="270px" height="70px" ry="5" x="310" y="100"/>
+    <text x="445" y="155" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc1"> Schmidts</tspan>
   </text>
-  <text x="445" y="130" class="calendarText">
+  <text x="445" y="130" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate1"> 21.01. von 11:00 bis 16:00 </tspan>
   </text>
 
   
 
-  <rect id="rect3" class="calendarEventBorder" x="310" y="180"/>
-    <text x="445" y="235" class="calendarText">
+  <rect id="rect3" style="stroke-width:2px;stroke:#FFF" width="270px" height="70px" ry="5" x="310" y="180"/>
+    <text x="445" y="235" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc2"> Lilo Schule </tspan>
   </text>
-  <text x="445" y="210" class="calendarText">
+  <text x="445" y="210" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate2"> 21.01. bis 27.01. </tspan>
   </text>
-  <text x="20" y="250" class="errorText">
+  <text x="20" y="250" style="fill:#FFF;font-size:30px;font-family:Verdana">
     <tspan template-id="calendarError"></tspan>
   </text>
 
-  <text x="20" y="40" class="smallInfo">
+  <text x="20" y="40" style="fill:#FFF;font-size:15px;font-family:Verdana">
     <tspan template-id="updateTime"> 10:00 </tspan>
   </text>
-  <text x="60" y="670" class="forecastText">
+  <text x="60" y="670" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTime0"> 10:10 </tspan>
   </text>
-  <text x="180" y="670" class="forecastText">
+  <text x="180" y="670" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTime1"> 10:10 </tspan>
   </text>
-  <text x="300" y="670" class="forecastText">
+  <text x="300" y="670" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTime2"> 10:10 </tspan>
   </text>
-  <text x="420" y="670" class="forecastText">
+  <text x="420" y="670" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTime3"> 10:10 </tspan>
   </text>
-  <text x="540" y="670" class="forecastText">
+  <text x="540" y="670" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTime4"> 10:10 </tspan>
   </text>
-  <text x="60" y="780" class="forecastText">
+  <text x="60" y="780" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTemp0"> 7C </tspan>
   </text>
-  <text x="180" y="780" class="forecastText">
+  <text x="180" y="780" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTemp1"> 7C </tspan>
   </text>
-  <text x="300" y="780" class="forecastText">
+  <text x="300" y="780" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTemp2"> 7C </tspan>
   </text>
-  <text x="420" y="780" class="forecastText">
+  <text x="420" y="780" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTemp3"> 7C </tspan>
   </text>
-  <text x="540" y="780" class="forecastText">
+  <text x="540" y="780" style="fill:#FFF;text-anchor:middle;font-size:20px;font-family:Verdana">
     <tspan template-id="foreTemp4"> 7C </tspan>
   </text>
-  <rect id="rect113-1" class="weatherIcon" x="20" y="680" template-id="foreIcon0" />
-  <rect id="rect113-2" class="weatherIcon" x="140" y="680" template-id="foreIcon1" />
-  <rect id="rect113-3" class="weatherIcon" x="260" y="680" template-id="foreIcon2" />
-  <rect id="rect113-4" class="weatherIcon" x="380" y="680" template-id="foreIcon3" />
-  <rect id="rect113-5" class="weatherIcon" x="500" y="680" template-id="foreIcon4" />
-  <rect id="rect113-6" class="weatherIcon" x="30" y="540" template-id="curIcon" />
-  <rect id="rect113-7" class="currentWeatherBorder" x="20" y="530" />
-  <rect id="rect113-8" class="weatherBorder" x="10" y="520" />
-  <text x="130" y="570" class="curText">
+  <rect id="rect113-1" style="fill:#FFF" width="80px" height="80px" x="20" y="680" template-id="foreIcon0" />
+  <rect id="rect113-2" style="fill:#FFF" width="80px" height="80px" x="140" y="680" template-id="foreIcon1" />
+  <rect id="rect113-3" style="fill:#FFF" width="80px" height="80px" x="260" y="680" template-id="foreIcon2" />
+  <rect id="rect113-4" style="fill:#FFF" width="80px" height="80px" x="380" y="680" template-id="foreIcon3" />
+  <rect id="rect113-5" style="fill:#FFF" width="80px" height="80px" x="500" y="680" template-id="foreIcon4" />
+  <rect id="rect113-6" style="fill:#FFF" width="80px" height="80px" x="30" y="540" template-id="curIcon" />
+  <rect id="rect113-7" style="fill:none;stroke:#FFF;stroke-width:2;ry:5" width="560px" height="100px" x="20" y="530" />
+  <rect id="rect113-8" style="fill:none;stroke:#FFF;stroke-width:2;ry:5" width="580px" height="270px" x="10" y="520" />
+  <text x="130" y="570" style="fill:#FFF;font-size:30px;font-family:Verdana">
     <tspan template-id="curTemp"> 1.0C fuehlt sich an wie -2.0 </tspan>
   </text>
-    <text x="130" y="610" class="curText">
+    <text x="130" y="610" style="fill:#FFF;font-size:30px;font-family:Verdana">
     <tspan template-id="curWind"> 7C </tspan>
   </text>
-  <text x="20" y="600" class="errorText">
+  <text x="20" y="600" style="fill:#FFF;font-size:30px;font-family:Verdana">
     <tspan template-id="weatherError"></tspan>
   </text>
 </svg>
