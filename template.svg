@@ -8,7 +8,7 @@
     <text x="445" y="80" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc0"> Emma surolan Ende? </tspan>
   </text>
-  <line x1="310" x2="580" y1="55" y2="55" stroke="#FFF" stroke-width="2"/>
+  <line x1="310" x2="580" y1="55" y2="55" stroke="#FFF" stroke-width="1"/>
   <text x="445" y="45" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate0"> 21.01.</tspan>
   </text>
@@ -19,7 +19,7 @@
     <text x="445" y="160" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc1"> Schmidts</tspan>
   </text>
-    <line x1="310" x2="580" y1="135" y2="135" stroke="#FFF" stroke-width="2"/>
+    <line x1="310" x2="580" y1="135" y2="135" stroke="#FFF" stroke-width="1"/>
   <text x="445" y="125" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate1"> 21.01. von 11:00 bis 16:00 </tspan>
   </text>
@@ -30,7 +30,7 @@
     <text x="445" y="240" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc2"> Lilo Schule </tspan>
   </text>
-    <line x1="310" x2="580" y1="215" y2="215" stroke="#FFF" stroke-width="2"/>
+    <line x1="310" x2="580" y1="215" y2="215" stroke="#FFF" stroke-width="1"/>
   <text x="445" y="205" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate2"> 21.01. bis 27.01. </tspan>
   </text>
