@@ -5,30 +5,33 @@
   <rect style="fill:#000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" id="rahmen" width="600" height="800" x="0" y="0" />
 
   <rect id="rect1" style="stroke-width:2;stroke:#FFF" width="270px" height="70px" ry="5" x="310" y="20"/>
-    <text x="445" y="75" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
+    <text x="445" y="80" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc0"> Emma surolan Ende? </tspan>
   </text>
-  <text x="445" y="50" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
+  <line x1="310" x2="580" y1="55" y2="55" stroke="#FFF" stroke-width="2"/>
+  <text x="445" y="45" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate0"> 21.01.</tspan>
   </text>
 
 
 
   <rect id="rect2" style="stroke-width:2px;stroke:#FFF" width="270px" height="70px" ry="5" x="310" y="100"/>
-    <text x="445" y="155" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
+    <text x="445" y="160" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc1"> Schmidts</tspan>
   </text>
-  <text x="445" y="130" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
+    <line x1="310" x2="580" y1="135" y2="135" stroke="#FFF" stroke-width="2"/>
+  <text x="445" y="125" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate1"> 21.01. von 11:00 bis 16:00 </tspan>
   </text>
 
   
 
   <rect id="rect3" style="stroke-width:2px;stroke:#FFF" width="270px" height="70px" ry="5" x="310" y="180"/>
-    <text x="445" y="235" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
+    <text x="445" y="240" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDesc2"> Lilo Schule </tspan>
   </text>
-  <text x="445" y="210" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
+    <line x1="310" x2="580" y1="215" y2="215" stroke="#FFF" stroke-width="2"/>
+  <text x="445" y="205" style="fill:#FFF;font-size:18px;text-anchor:middle;font-family:Verdana">
     <tspan template-id="calendarEventDate2"> 21.01. bis 27.01. </tspan>
   </text>
   <text x="20" y="250" style="fill:#FFF;font-size:30px;font-family:Verdana">
