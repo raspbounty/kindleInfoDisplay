@@ -17,7 +17,7 @@ else:
     os.chdir('/home/pi/kindleInfoDisplay')
 
 import cairosvg
-import datetime
+from datetime import timedelta, datetime, timezone
 import svglue
 
 def degrees_to_cardinal(d):
@@ -32,8 +32,8 @@ def getCalDateString(event):
         else:
             out = event.begin.format("DD.MM.")
     else:
-        beginTime = datetime.datetime.fromtimestamp(event.begin.timestamp())
-        endTime = datetime.datetime.fromtimestamp(event.end.timestamp())
+        beginTime = datetime.fromtimestamp(event.begin.timestamp())
+        endTime = datetime.fromtimestamp(event.end.timestamp())
         out=  beginTime.strftime("%d.%m. von %H:%M") + " bis "  + endTime.strftime("%H:%M")
     return out
 
@@ -43,27 +43,29 @@ outputsvg = "output.svg"
 outputpng = "output.png"
 weatherFile = "weatherData.json"
 calendarFile = "calendar.ics"
+oneday = timedelta(days=1)
+halfhour = timedelta(seconds=1800)
 
 with open("parameter.json", "r") as f:
     params = json.load(f)
 owmParams = params["owm"]
 calUrl = params["gcalendar"]
 
-current_time = datetime.datetime.now()
+current_time = datetime.now()
 
 '''weather Data'''
 try:
     with open(weatherFile, "r") as f:
         localData = json.load(f)
-    lastWeatherRequest = datetime.datetime.fromtimestamp(localData["now"]["dt"])
+    lastWeatherRequest = datetime.fromtimestamp(localData["now"]["dt"])
+    timeDiff = current_time - lastWeatherRequest
 except:
-    #set to random timestamp more than 30 min ago
-    lastWeatherRequest = datetime.datetime.fromtimestamp(1326244364)
+    #set to timedelta more than 1 day ago
+    timeDiffCal = timedelta.max
 
 #check if data is more than 30 min old
-timeDiff = current_time - lastWeatherRequest
 weatherError = None
-if timeDiff.seconds > 1800:
+if timeDiff > halfhour:
     #pull new Data   
     try:
         response = requests.get(urlNow, params = owmParams)
@@ -103,7 +105,7 @@ if weatherError == None:
         temp = forecasts[i]["main"]["feels_like"]
         icon = forecasts[i]["weather"][0]["icon"]
         
-        timestr = str(datetime.datetime.fromtimestamp(timestamp=time, tz=datetime.timezone.utc).strftime('%H:%M'))
+        timestr = str(datetime.fromtimestamp(timestamp=time, tz=timezone.utc).strftime('%H:%M'))
         temp = str(int(round(temp, 0))) + "C"
         iconName = "icons/"+ str(iconMap[icon])
 
@@ -117,13 +119,13 @@ else:
 '''Calendar Data'''
 calendarError = None
 try:
-    lastCalendarRequest = datetime.datetime.fromtimestamp(os.path.getmtime(calendarFile))
+    lastCalendarRequest = datetime.fromtimestamp(os.path.getmtime(calendarFile))
+    timeDiffCal = current_time - lastCalendarRequest
 except:
-    #set to random timestamp more than 1 day ago
-    lastCalendarRequest = datetime.datetime.fromtimestamp(1326244364)
-timeDiffCal = current_time - lastCalendarRequest
+    #set to timedelta more than 1 day ago
+    timeDiffCal = timedelta.max
 
-if(timeDiffCal.days > 1):
+if(timeDiffCal > oneday):
     try:
         calendar = requests.get(calUrl).text
         with open(calendarFile, 'w') as calFile:
