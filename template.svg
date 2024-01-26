@@ -91,12 +91,19 @@
   <text x="446.1142" y="493.04056" style="font-size:37.3333px;font-family:Verdana;fill:#FFF">
     <tspan template-id="currentWindDir">WSW</tspan>
   </text>
-  <text x="442.04822" y="554.78583" style="font-size:37.3333px;font-family:Verdana;fill:#FFF">
-    <tspan template-id="currentWindSpeed">16m/s</tspan>
+  <text x="525" y="554.78583" style="font-size:37.3333px;font-family:Verdana;fill:#FFF;text-anchor:end">
+    <tspan template-id="currentWindSpeed">16</tspan>
   </text>
-  <text x="442.6875" y="611.81366" style="font-size:37.3333px;font-family:Verdana;fill:#FFF">
-    <tspan template-id="currentWindGust">16m/s</tspan>
+  <text x="550" y="540" style="font-size:25px;font-family:Verdana;fill:#FFF;text-anchor:middle"><tspan>km</tspan></text>
+  <line x1="530" x2="570" y1="545" y2="545" stroke="#FFF" stroke-width="1"/>
+  <text x="550" y="570" style="font-size:25px;font-family:Verdana;fill:#FFF;text-anchor:middle"><tspan>h</tspan></text>
+
+  <text x="525" y="612" style="font-size:37.3333px;font-family:Verdana;fill:#FFF;text-anchor:end">
+    <tspan template-id="currentWindGust">16</tspan>
   </text>
+  <text x="550" y="595" style="font-size:25px;font-family:Verdana;fill:#FFF;text-anchor:middle"><tspan>km</tspan></text>
+  <line x1="530" x2="570" y1="600" y2="600" stroke="#FFF" stroke-width="1"/>
+  <text x="550" y="625" style="font-size:25px;font-family:Verdana;fill:#FFF;text-anchor:middle"><tspan>h</tspan></text>
 
   <text x="20" y="600" style="fill:#FFF;font-size:30px;font-family:Verdana">
     <tspan template-id="weatherError"></tspan>

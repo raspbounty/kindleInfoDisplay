@@ -48,6 +48,7 @@ weatherFile = "weatherData.json"
 calendarFile = "calendar.ics"
 oneday = timedelta(days=1)
 halfhour = timedelta(seconds=1800)
+special_char_map = {ord('ä'):'ae', ord('ü'):'ue', ord('ö'):'oe', ord('ß'):'ss'}
 
 with open("parameter.json", "r") as f:
     params = json.load(f)
@@ -97,10 +98,14 @@ if weatherError == None:
     currentTemp = intToString(weather["now"]["main"]["temp"])
     currentFeels = intToString(weather["now"]["main"]["feels_like"])
     currentIcon = "icons/160/"+ str(iconMap[weather["now"]["weather"][0]["icon"]])
-    currentWind = intToString(weather["now"]["wind"]["speed"]) + "m/s"
+    currentWind = intToString(weather["now"]["wind"]["speed"]*3.6)
     currentDeg = degrees_to_cardinal(weather["now"]["wind"]["deg"])
-    currentGust = intToString(weather["now"]["wind"]["gust"]) + "m/s"
-    currentRain = intToString(weather["now"]["rain"]["1h"]) + "mm"
+    currentGust = intToString(weather["now"]["wind"]["gust"]*3.6)
+    if 'rain' in weather["now"]:
+        rainvalue = weather["now"]["rain"]["1h"]
+    else:
+        rainvalue = 0
+    currentRain = intToString(rainvalue) + "mm"
 
     tpl.set_text("currentTemp", currentTemp)
     tpl.set_text("currentFeelTemp", currentFeels)
@@ -152,7 +157,7 @@ if calendarError == None:
     c = Calendar(calendar)
     eventsList = list(c.timeline.now()) + list(c.timeline.start_after(arrow.now()))
     for i in range(3):
-        tpl.set_text("calendarEventDesc" + str(i), eventsList[i].name)
+        tpl.set_text("calendarEventDesc" + str(i), eventsList[i].name.translate(special_char_map))
         tpl.set_text("calendarEventDate" + str(i), getCalDateString(eventsList[i]))
 
 else:
