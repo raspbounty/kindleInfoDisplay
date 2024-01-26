@@ -25,6 +25,9 @@ def degrees_to_cardinal(d):
     ix = round(d / (360. / len(dirs)))
     return dirs[ix % len(dirs)]
 
+def intToString(value):
+    return str(int(round(value,0)))
+
 def getCalDateString(event):
     if(event.all_day):
         if(event.duration.days > 1):
@@ -91,12 +94,20 @@ if weatherError == None:
     with open("iconsMapping.json", "r") as f:
         iconMap = json.load(f)
 
-    currentTemp = str(int(round(weather["now"]["main"]["temp"], 0))) + "C fuehlt sich an wie " + str(int(round(weather["now"]["main"]["feels_like"], 0))) + "C"
-    currentIcon = "icons/"+ str(iconMap[weather["now"]["weather"][0]["icon"]])
-    currentWind = str(weather["now"]["wind"]["speed"]) + "m/s von " + degrees_to_cardinal(weather["now"]["wind"]["deg"])
+    currentTemp = intToString(weather["now"]["main"]["temp"])
+    currentFeels = intToString(weather["now"]["main"]["feels_like"])
+    currentIcon = "icons/160/"+ str(iconMap[weather["now"]["weather"][0]["icon"]])
+    currentWind = intToString(weather["now"]["wind"]["speed"]) + "m/s"
+    currentDeg = degrees_to_cardinal(weather["now"]["wind"]["deg"])
+    currentGust = intToString(weather["now"]["wind"]["gust"]) + "m/s"
+    currentRain = intToString(weather["now"]["rain"]["1h"]) + "mm"
 
-    tpl.set_text("curTemp", currentTemp)
-    tpl.set_text("curWind", currentWind)
+    tpl.set_text("currentTemp", currentTemp)
+    tpl.set_text("currentFeelTemp", currentFeels)
+    tpl.set_text("currentRain", currentRain)
+    tpl.set_text("currentWindDir", currentDeg)
+    tpl.set_text("currentWindSpeed", currentWind)
+    tpl.set_text("currentWindGust", currentGust)
     tpl.set_svg("curIcon", file=currentIcon)
 
     forecasts = weather["forecast"]["list"]
@@ -107,7 +118,7 @@ if weatherError == None:
         
         timestr = str(datetime.fromtimestamp(timestamp=time, tz=timezone.utc).strftime('%H:%M'))
         temp = str(int(round(temp, 0))) + "C"
-        iconName = "icons/"+ str(iconMap[icon])
+        iconName = "icons/80/"+ str(iconMap[icon])
 
         tpl.set_text("foreTime" + str(i), timestr)
         tpl.set_text("foreTemp" + str(i), temp)
